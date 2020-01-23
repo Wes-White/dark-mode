@@ -1,13 +1,6 @@
 import React from "react";
 import moment from "moment";
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip
-} from "recharts";
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 
 const Chart = ({ sparklineData }) => {
   const formattedData = sparklineData
@@ -27,13 +20,13 @@ const Chart = ({ sparklineData }) => {
     .filter(data => data);
 
   return (
-    <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
+    <BarChart width={1100} height={300} data={formattedData}>
+      <Bar type="monotone" dataKey="value" stroke="orange" fill="#7F00FF" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
       <Tooltip />
-    </LineChart>
+    </BarChart>
   );
 };
 
