@@ -9,7 +9,7 @@ const useDarkMode = () => {
       console.log("value in storage is dark!");
       document.body.classList.add("dark-mode");
     } else {
-      document.bodyclassList.remove("dark-mode");
+      document.body.classList.remove("dark-mode");
     }
   }, [isDark]);
 
